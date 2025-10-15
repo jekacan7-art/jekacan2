@@ -1,0 +1,24 @@
+import random
+
+def guess_game():
+    number = random.randint(1, 100)
+    attempts = 0
+    
+    while True:
+        try:
+            user_guess = int(input("Угадай число от 1 до 100: "))
+            attempts += 1
+            
+            if user_guess > number:
+                print("Число меньше!")
+            elif user_guess < number:
+                print("Число больше!")
+            else:
+                print(f"Победа! Ты угадал число {number} за {attempts} попыток.")
+                break
+                
+        except ValueError:
+            print("Это не число. Попробуй снова.")
+
+if __name__ == "__main__":
+    guess_game()
